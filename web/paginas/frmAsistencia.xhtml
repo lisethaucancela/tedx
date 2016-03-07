@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TEDxEspoch2015"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="../plantillas/template_admin.xhtml">
+            <ui:define name="content">
+                <div id="" class="padding-container container">
+                    <br/><br/><br/><br/>
+                    <center>
+                        <h:outputText value="POR FAVOR INGRESAR LA ASISTENCIA" class="text-white" ></h:outputText>
+                        <br/><hr/>
+                        <!--Fin Formulario Asistenacia -->
+                        <h:form id="frmAsistencia" class="text-white" >
+                            <p:growl id="mensajeGeneral" showDetail="true" sticky="false" life="10000" />
+                            <h:panelGrid>
+                                <p:outputLabel value="Cédula"/>
+                                <p:inputMask mask="9999999999" value="#{usuarioControlador.objUsuario.cedula}" required="true"  requiredMessage="Ingrese la cédula"/> 
+
+                                <p:commandButton  class="btn-inscribirse"   value="Registrar" ajax="false"
+                                                  actionListener="#{usuarioControlador.insertarAsistencia()}" />
+                            </h:panelGrid>
+                        </h:form>
+                        <!--Fin Formulario Asistenacia -->
+                    </center> 
+                    <!--Inicio del dialogo-->
+                    <p:dialog id="tAsistencia" widgetVar="wgAsistencia"
+                              header="Datos de la inscripción" modal="true"  closeOnEscape="true">
+                        <h:form>
+                            <p:panelGrid id="pngNuevo" columns="2">
+                                <h:outputText value="Codigo:"/>
+                                <p:inputText value="#{usuarioControlador.selObjtUsuario.id}"/>
+                                <h:outputText value="Nombre:"/>
+                                <p:inputText value="#{usuarioControlador.nombre}"/>
+                                <h:outputText value="Apellido:"/>
+                                <p:inputText value="#{usuarioControlador.selObjtUsuario.apellido}"/>
+                                <h:outputText value="Cedula:"/>
+                                <p:inputText value="#{usuarioControlador.selObjtUsuario.cedula}"/>
+                            </p:panelGrid>
+                            <p:separator/>
+                        </h:form>
+                    </p:dialog>
+                    <!--Fin Dialogo-->   
+                </div> 
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

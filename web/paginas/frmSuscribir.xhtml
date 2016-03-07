@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TEDxEspoch2015"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+        
+    </h:head>
+    <h:body style="background: #565656">
+
+        <!-- ========= Inicio Header ========= -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header"> 
+                    <button type="button" class="navbar-toggle" style="margin-top:20px;"  data-target="#navbar-col" data-toggle="collapse">	 					
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>        	
+                    <a class="navbar-brand" href="../index.xhtml">
+                        <img src="../images/logo_TED.png" alt="TEDx Espoch Riobamba" class="img-responsive"/>
+                    </a>
+                </div>
+                <div class="social-network hidden-xs">
+                    <a class="icons facebook" href="https://www.facebook.com/tedxespochriobamba" target="_blank">
+                        <img src="../images/icon-facebook.png" alt="Facebook"/>
+                    </a>                	
+                    <a class="icons twitter" href="https://twitter.com/Tedxespochrbba" target="_blank">
+                        <img src="../images/icon-twitter.png" alt="Twitter" />
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-col">
+                    <ul class="nav navbar-nav visible-xs">
+                        <li><a href="inscripcion.xhtml">Inscripción</a></li>
+                        <li><a href="https://www.facebook.com/tedxespochriobamba" target="_blank">Facebook</a></li>
+                        <li><a href="https://twitter.com/Tedxespochrbba" target="_blank">Twitter</a></li>
+                    </ul>         
+                </div>
+            </div>
+        </div>
+        <div id="inscripcion">
+            
+            <div class="container padding-container">
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- =========  Fin  Header ========= -->
+
+        <!-- ========= Inicio Formulario ========= -->
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<div class="container">
+        <center>
+            <h:outputText value="POR FAVOR COMPLETA EL SIGUIENTE FORMULARIO" class="text-white" ></h:outputText>
+            <br/>
+            <b> <h:outputText value="CUPOS LIMITADOS,  DEL TOTAL DE INSCRITOS SE SELECCIONARAN UNICAMENTE  100 ASISTENTES" class="text-red" style="" ></h:outputText></b>
+            
+            <h:form id="frmRegistrarUsuario" class="text-white" >
+                <p:growl id="mensajeGeneral" showDetail="true" sticky="false" life="10000" />
+                <h:panelGrid>
+
+                    <p:outputLabel value="Nombre" for="txtNombre"/>
+                            <p:inputText id="txtNombre" label="Nombre" size="50" value="#{usuarioControlador.objUsuario.nombre}" style="text-transform: uppercase" required="true"  requiredMessage="Ingrese nombre">
+                            </p:inputText>
+                            <p:message for="txtNombre"/>
+
+                            <p:outputLabel value="Apellido" for="txtApellido"/>
+                            <p:inputText id="txtApellido" label="Apellido" size="50" value="#{usuarioControlador.objUsuario.apellido}" style="text-transform: uppercase" required="true" requiredMessage="Ingrese el apellido" >
+                            </p:inputText>
+                            <p:message for="txtApellido"/>
+
+                            <p:outputLabel value="Cédula"/>
+                            <p:inputMask mask="9999999999" value="#{usuarioControlador.objUsuario.cedula}" required="true"  requiredMessage="Ingrese la cédula"/> 
+
+                            <p:outputLabel value="Email" for="txtEmail"/>
+                            <p:inputText id="txtEmail" value="#{usuarioControlador.objUsuario.email}" label="Correo Electronico, ejemplo jperez@hotmail.com" size="50" title="Ejemplo: mybil@gmail.com"  required="true" requiredMessage="Ingrese el correo electrónico" >
+                                <f:validator validatorId="validatorEmail"/>
+                            </p:inputText>
+                            <p:message for="txtEmail"></p:message>
+
+                            <p:outputLabel value="Ciudad/Institución" for="txtCiudad"/>
+                            <p:inputText id="txtCiudad" label="Ciudad" size="50" value="#{usuarioControlador.objUsuario.ciudad}" style="text-transform: uppercase" required="true" requiredMessage="Ingrese la Ciudad/Instituto">
+                            </p:inputText>
+
+                            <p:outputLabel value="¿Por qué quisieras asisitir a TEDxESPOCHRiobamba? " />
+                            <p:inputTextarea value="#{usuarioControlador.objPersonaPeriodo.tpersonaperiodocomentario}" style="text-transform: uppercase" rows="5" cols="53" counter="display" maxlength="500" counterTemplate="{0} caracteres máximos." autoResize="false" required="true" requiredMessage="Debe escribir la razon por la que se esta inscribiendo en este evento"/>
+                            <h:outputText id="display" />
+
+                            <p:outputLabel value="¿Cuál es tu pensamiento TED? " />
+                            <p:inputTextarea value="#{usuarioControlador.objPersonaPeriodo.tpersonaperiodopensamiento}" style="text-transform: uppercase" rows="5" cols="53" counter="display1" maxlength="500" counterTemplate="{0} caracteres máximos." autoResize="false" required="true" requiredMessage="Debe escribir cual es su pensamiento Tedx"/>
+                            <h:outputText id="display1" />
+
+                            <p:commandButton class="btn-inscribirse"   value="Inscribir" ajax="false"  process="@form" actionListener="#{usuarioControlador.insertarUsuario()}" update="mensajeGeneral" />
+                    
+                </h:panelGrid>
+            </h:form>
+            
+        </center>
+</div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <!-- ========= Fin Formulario ========= -->
+        <div class="container">
+            <div class="bg-sponsor">
+            </div> 
+            <!-- =========   Inicio  Sponsor  ========= -->  
+            <div class="container padding-container sponsor">
+                <div class="row"> 
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-4">                       
+                    </div> 
+                    <div class="col-lg-6 col-md-4 col-sm-4 col-xs-4 center-block">
+                        <img class="img-responsive" src="../images/icon-estrella.png" />
+                    </div> 
+
+                </div>
+                <div class="row">               
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 center-block" >
+                        <div style="background-color:#000">
+                            <p class="text-justify text-white" >
+                               Para nuestros ancestros puruhaes y para nosotros el nevado Chimborazo, 
+                               el “Taita” es considerado como un Dios sagrado de gran poder. Como una 
+                               fuerza inmanente, capaz de ejercer el poder de su liderazgo y vigor sobre
+                               las cosas y las personas.
+                        </p><br /> <b>
+                            <p class="text-center text-white"> LUNES 19 DE OCTUBRE DEL 2015</p>
+                            <p class="text-center text-white">AUDITORIO ROMEO RODRÍGUEZ <font color="#ED3624">|</font> 16:00 
+                                <font color="#ED3624">|</font> RIOBAMBA</p> </b>
+                    </div>
+                </div>                
+            </div>
+
+        </div> 
+
+
+
+        <div class="padding-container" id="footer" style="padding-top:160px;">    
+            <div class="container" >
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                        <a href="https://www.facebook.com/riobamba?fref=ts" target="_blank">
+                            <img class="center-block img-responsive" src="../images/icon-rio.png"/>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                        <a href=" https://www.facebook.com/escobarycastro?fref=ts" target="_blank">
+                            <img class="center-block img-responsive" src="../images/icon-ec.png"/>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                        <a href=" https://www.facebook.com/tropiburger?fref=ts" target="_blank">
+                            <img class="center-block img-responsive" src="../images/icon-tb.png"/>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                        <a href="http://www.menestrasdelnegro.com/" target="_blank">
+                            <img class="center-block img-responsive" src="../images/icon-mdn.png"/>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                                    <a href="" target="_blank">
+                                        <img class="img-responsive" src="../images/icon-cont.png"/>
+                                    </a>
+                                </div>
+                </div>         	
+                <div class="row padding-top-20"> 	
+                    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right" style="border-style:dashed; padding:2px;">
+                        <p class=" text-black text-justify"> Recuerda llevar tu documento de identificación. Para asegurar un buen lugar en el auditorio y 		     				comodidad al momento del registro te recomendamos llegar 30 minutos antes de la hora indicada. Es importante apagar o silenciar tu          			teléfono durante el evento. </p>
+                    </div>                
+                </div>
+                <div class="row">
+                    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-8" >
+                        <img class="center-block img-responsive" src="../images/nevado.png"/>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+    </div>
+
+    <div class="bg-footer"> 
+
+    </div>
+        
+        
+        
+    </h:body>
+</html>
+

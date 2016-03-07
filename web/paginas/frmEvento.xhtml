@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TEDxEspoch2015"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/style.css"/>         
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="../plantillas/template_admin.xhtml">
+
+            <ui:define name="content">
+                <div id="" class="padding-container container">
+                    <!--Inicio Formulario-->
+                    <h:form id="frmEvento">
+                        <p:growl id="mensajeGeneral" showDetail="true" sticky="false" life="5000" />
+                        <p:panel id="pnlEventoDatos">
+
+                            <hr/><center>
+                                <h:outputText value="LISTA DE EVENTOS" class="h4"/></center>
+                            <br/>       
+                            <p:dataTable id="tblEvento" value="#{periodoControlador.lstPeriodo}" var="periodo" paginator="true" rows="15"
+                                         selectionMode="single" rowKey="#{periodo.tperiodoid}" selection="#{periodoControlador.selPeriodo}"
+                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                         rowsPerPageTemplate="5,10,15">  
+                                <p:column class="col-md-1 col-lg-1">
+                                    <f:facet name="header">
+                                        <h:outputText value="Código"/>
+                                    </f:facet>
+                                    <h:outputText value="#{periodo.tperiodoid}"/>
+                                </p:column>
+                                <p:column class="col-lg-3">
+                                    <f:facet name="header">
+                                        <h:outputText value="Descripcion"/>
+                                    </f:facet>
+                                    <h:outputText value="#{periodo.tperiododescripcion}"/>
+                                </p:column>
+                                <p:column class="col-lg-2">
+                                    <f:facet name="header">
+                                        <h:outputText value="Fecha Inicio"/>
+                                    </f:facet>
+                                    <h:outputText value="#{periodo.tperiodofechainicio}" />
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Fecha Fin" >
+
+                                        </h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{periodo.tperiodofechafin}" />
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Máximo Asistentes"/>
+                                    </f:facet>
+                                    <h:outputText value="#{periodo.tperiodomaxparticipantes}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Activo"/>
+                                    </f:facet>
+                                    <h:selectBooleanCheckbox value="#{periodo.tperiodoestado}" />
+                                </p:column>
+                                <p:column class="col-lg-2">
+                                    <f:facet name="header">
+                                        <h:outputText value="Acción"/>
+                                    </f:facet>
+                                    <p:commandButton id="btnEditar" icon="ui-icon-pencil" 
+                                                     process="@this" onclick="PF('wgEditarEvento').show()" 
+                                                     title="Editar Datos"    update=":frmEditarEvento:pngEditar" >
+                                        <f:setPropertyActionListener value="#{periodo}" target="#{periodoControlador.selPeriodo}"/>
+                                    </p:commandButton>
+                                    <p:commandButton id="btnEliminar" icon="ui-icon-trash" 
+                                                     process="@this" onclick="PF('wgEliminarEvento').show()" 
+                                                     title="Eliminar Datos"    update=":frmEliminarEvento" >
+                                        <f:setPropertyActionListener value="#{periodo}" target="#{periodoControlador.selPeriodo}"/>
+                                    </p:commandButton>                                    
+                                </p:column>
+
+                                <f:facet name="footer">  
+                                    <p:commandButton id="btnNuevo" value="Nuevo" icon="ui-icon-newwin" 
+                                                     update="frmEventoNuevo:pngNuevo" onclick="PF('wgInsertarEvento').show()" 
+                                                     title="Agregar Nuevo Evento" type="button" /> 
+                                </f:facet>
+                            </p:dataTable>
+                        </p:panel>
+                    </h:form>                 
+                    <!--Fin Formulario  -->
+
+                    <!--Inicio del dialogo-->
+                    <p:dialog header="INGRESAR NUEVO EVENTO" widgetVar="wgInsertarEvento" modal="true" closable="true" resizable="false"
+                              showEffect="fade" hideEffect="explode">  
+                        <h:form id="frmEventoNuevo">
+                            <p:panelGrid id="pngNuevo" columns="2">
+                                <h:outputText value="Descripción:"/>
+                                <p:inputText value="#{periodoControlador.objPeriodo.tperiododescripcion}"/>
+                                <h:outputText value="Fecha Inicio:"/>
+                                <p:calendar value="#{periodoControlador.objPeriodo.tperiodofechainicio}" pattern="yyyy/MM/dd"/>
+                                <h:outputText value="Fecha Fin:"/>
+                                <p:calendar value="#{periodoControlador.objPeriodo.tperiodofechafin}" pattern="yyyy/MM/dd"/>
+                                <h:outputText value="Máximo Asistentes:"/>
+                                <p:inputText value="#{periodoControlador.objPeriodo.tperiodomaxparticipantes}"/>
+                                <h:outputText value="Estado:"/>
+                                <p:selectBooleanCheckbox value="#{periodoControlador.objPeriodo.tperiodoestado}"/>
+                            </p:panelGrid>
+                            <div class="modal-footer">
+                                <h:commandLink value="Aceptar" actionListener="#{periodoControlador.insertarPeriodo()}" styleClass="btn btn-info"/>
+                                <p:commandLink value="Cancelar" process="@this" onclick="PF('wgInsertarEvento').hide()" type="reset" styleClass="btn btn-danger"/>
+                            </div>
+                        </h:form> 
+                    </p:dialog>
+                    <p:dialog header="MODIFICAR DATOS EVENTO" widgetVar="wgEditarEvento" modal="true" closable="true" resizable="false"
+                              showEffect="fade" hideEffect="explode">  
+                        <h:form id="frmEditarEvento">
+                            <p:panelGrid id="pngEditar" columns="2">
+                                <h:outputText value="Descripción:"/>
+                                <p:inputText value="#{periodoControlador.selPeriodo.tperiododescripcion}"/>
+                                <h:outputText value="Fecha Inicio:"/>
+                                <p:calendar value="#{periodoControlador.selPeriodo.tperiodofechainicio}" pattern="yyyy/MM/dd"/>
+                                <h:outputText value="Fecha Fin:"/>
+                                <p:calendar value="#{periodoControlador.selPeriodo.tperiodofechafin}" pattern="yyyy/MM/dd"/>
+                                <h:outputText value="Máximo Asistentes:"/>
+                                <p:inputText value="#{periodoControlador.selPeriodo.tperiodomaxparticipantes}"/>
+                                <h:outputText value="Estado:"/>
+                                <p:selectBooleanCheckbox value="#{periodoControlador.selPeriodo.tperiodoestado}"/>
+                            </p:panelGrid>
+                            <div class="modal-footer">
+                                <h:commandLink value="Aceptar" actionListener="#{periodoControlador.editarPeriodo()}" styleClass="btn btn-info" />
+                                <p:commandLink value="Cancelar" process="@this" onclick="PF('wgEditarEvento').hide()" type="reset" styleClass="btn btn-danger"/>
+                            </div>
+                        </h:form> 
+                    </p:dialog>
+
+                    <p:dialog header="ELIMINAR DATOS EVENTO" widgetVar="wgEliminarEvento" modal="true"  closable="true" resizable="false"
+                              showEffect="fade" hideEffect="explode">  
+                        <h:form id="frmEliminarEvento">
+                            <h:outputText value="¿Seguro que desea eliminar al periodo #{periodoControlador.selPeriodo.tperiododescripcion} ? "/>
+                            <div class="modal-footer">
+                                <h:commandLink value="Eliminar" actionListener="#{periodoControlador.eliminarPeriodo()}" styleClass="btn btn-info" />
+                                <p:commandLink value="Cancelar" process="@this" onclick="PF('wgEliminarEvento').hide()" type="reset" styleClass="btn btn-danger"/>
+                            </div>
+                        </h:form> 
+                    </p:dialog>
+                    <p:dialog widgetVar="dialogo" modal="true" header="Confirmación">
+                        <h:form id="form">
+                            <h:outputText value="¿Seguro que desea confirmar a #{personaPeriodoControlador.lstParticipantes.size()} registros? "/>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="modal-footer">
+                                        <h:commandLink  actionListener="#{personaPeriodoControlador.confirmarParticipantes()}"
+                                                        styleClass="btn btn-info" title="Si" value="Si"/>  
+                                        <p:commandLink type="reset" process="@this" onclick="PF('dialogo').hide()"
+                                                       styleClass="btn btn-danger" title="No" value="No"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </h:form>
+                    </p:dialog>
+                </div>             
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

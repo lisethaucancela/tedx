@@ -1,0 +1,89 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>   
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:ui="http://java.sun.com/jsf/facelets"  
+      xmlns:h="http://java.sun.com/jsf/html">  
+    <h:head>    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TedxRiobamba"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/style.css"/>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+        <style type="text/css"></style> 
+    </h:head>  
+    <h:body style="background: #555">  
+        <div id="header">
+            <ui:insert name="header" >
+                <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header"> 
+                            <button type="button" class="navbar-toggle" style="margin-top:20px;"  data-target="#navbar-col" data-toggle="collapse">	 					
+                                <span class="sr-only">Menu</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>        	
+                            <ui:insert name="index"> 
+                                <a class="navbar-brand" href="../index.xhtml">
+                                    <img src="../images/logo_TED.png" alt="TEDx Espoch Riobamba" class="img-responsive"/>
+                                </a>
+                            </ui:insert>
+                        </div>
+                        <div class="social-network hidden-xs" style="margin-top: 0px; padding-top: 10px;">
+                            <a class="icons facebook" href="https://www.facebook.com/tedxespochriobamba" target="_blank">
+                                <img src="../images/icon-facebook.png" alt="Facebook"/>
+                            </a>                	
+                            <a class="icons twitter" href="https://twitter.com/Tedxespochrbba" target="_blank">
+                                <img src="../images/icon-twitter.png" alt="Twitter" />
+                            </a>
+                            <div class="dropdown"> <!--Menu de Usuario-->
+                                <a  href="#" class="dropdown-toggle text-white" data-toggle="dropdown" >h
+                                    <b> <span class="caret"></span></b>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                    <li ><a role="menuitem" tabindex="-1" href="#">Perfil</a></li>
+                                    <li class="divider"></li>
+                                    <li ><a role="menuitem" tabindex="-1" href="#">Salir</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navbar-collapse collapse" id="navbar-col"><!--Menu Despegable xs-->
+                            <ul class="nav navbar-nav visible-xs">
+                                <li><a href="frmRegistrados.xhtml">Registrados</a></li>
+                                <li><a href="frmParticipantes.xhtml">Participantes</a></li>                               
+                                <li><a href="frmSuscribir.xhtml">Asistencia</a></li>
+                                <li><a href="frmAsistencia.xhtml">Inscripción</a></li> 
+                                <li><a href="https://www.facebook.com/tedxespochriobamba" target="_blank">Facebook</a></li>
+                                <li><a href="https://twitter.com/Tedxespochrbba" target="_blank">Twitter</a></li>
+                            </ul>  
+                        </div>
+                        <div class="navbar-collapse collapse"> <!--Menu Principal-->
+                            <ul class="nav navbar-nav hidden-xs pull-right">
+                                <li><a href="frmRegistrados.xhtml">Registrados</a></li>
+                                <li><a href="frmParticipantes.xhtml">Participantes</a></li>                               
+                                <li><a href="frmAsistencia.xhtml">Asistencia</a></li>
+                                <li><a href="frmSuscribir.xhtml">Inscripción</a></li>
+                            </ul>         
+                        </div>
+                    </div>
+                </div>
+            </ui:insert>
+        </div>
+
+        <div class="container" style="padding-top: 120px;">            
+            <ui:insert name="content">
+            </ui:insert>
+            
+            <div id="footer" class="padding-container">
+                <ui:insert name="footer" >
+                    
+                </ui:insert>
+            </div>
+        </div>
+        
+        <ui:insert name="dialogos" >            
+        </ui:insert>
+    </h:body>  
+</html> 

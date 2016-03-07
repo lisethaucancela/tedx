@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TEDxEspoch2015"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/style.css"/>         
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="../plantillas/template_admin.xhtml">
+
+            <ui:define name="content">
+                <div id="" class="padding-container container">
+                    <!--Inicio Formulario-->
+                    <h:form id="frmRegistrados">
+                        <p:growl id="mensajeGeneral" showDetail="true" sticky="false" life="5000" />
+                        <p:panel id="pnlRegistradosDatos">
+                            <ul class="list-inline">
+                                <li><h:outputText value="Registrados "/>                        
+                                    <h:outputText class="badge alert-info" value=" #{personaPeriodoControlador.lstRegistrados.size()}"/>
+                                </li>
+                                <li><a href="frmParticipantes.xhtml"><h:outputText value="Participantes "/>                        
+                                        <h:outputText class="badge alert-danger" value=" #{personaPeriodoControlador.numeroParticipantes}"/></a>
+                                </li>
+                            </ul>
+                            <hr/><center>
+                                <h:outputText value="LISTA DE PARTICIPANTES" class="h4"/></center>
+                            <br/>       
+                            <p:dataTable id="tblParticipantes" value="#{personaPeriodoControlador.lstParticipantes}" var="participantes" paginator="true" rows="15"
+                                         selectionMode="single" rowKey="#{participantes.tpersonaid}" selection="#{personaPeriodoControlador.objPersonaPeriodo}"
+                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                         rowsPerPageTemplate="5,10,15">  
+                                <p:column class="col-md-1 col-lg-1">
+                                    <f:facet name="header">
+                                        <h:outputText value="Código"/>
+                                    </f:facet>
+                                    <h:outputText value="#{participantes.objPersona.id}"/>
+                                </p:column>
+                                <p:column class="col-lg-2">
+                                    <f:facet name="header">
+                                        <h:outputText value="Nombre"/>
+                                    </f:facet>
+                                    <h:outputText value="#{participantes.objPersona.nombre}"/>
+                                </p:column>
+                                <p:column class="col-lg-2">
+                                    <f:facet name="header">
+                                        <h:outputText value="Apellido"/>
+                                    </f:facet>
+                                    <h:outputText value="#{participantes.objPersona.apellido}" />
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Comentario" />
+                                    </f:facet>
+                                    <h:outputText value="#{participantes.tpersonaperiodocomentario}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Pensamiento"/>
+                                    </f:facet>
+                                    <h:outputText value="#{participantes.tpersonaperiodopensamiento}"/>
+                                </p:column>
+
+                            </p:dataTable>
+                        </p:panel>
+                    </h:form>                 
+                    <!--Fin Formulario  -->
+
+                </div>             
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

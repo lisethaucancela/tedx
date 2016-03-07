@@ -1,0 +1,114 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>   
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:ui="http://java.sun.com/jsf/facelets"  
+      xmlns:h="http://java.sun.com/jsf/html">  
+    <h:head>    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TedxRiobamba"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+        <style type="text/css"></style> 
+    </h:head>  
+    <h:body>  
+        <div id="header">
+            <ui:insert name="header" >
+                <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header"> 
+                            <button type="button" class="navbar-toggle" style="margin-top:20px;"  data-target="#navbar-col" data-toggle="collapse">	 					
+                                <span class="sr-only">Menu</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>        	
+                            <ui:insert name="index"> 
+                                <a class="navbar-brand" href="../index.xhtml">
+                                    <img src="../images/logo_TED.png" alt="TEDx Espoch Riobamba" class="img-responsive"/>
+                                </a>
+                            </ui:insert>
+                        </div>
+                        <div class="social-network hidden-xs">
+                            <a class="icons facebook" href="https://www.facebook.com/tedxespochriobamba" target="_blank">
+                                <img src="../images/icon-facebook.png" alt="Facebook"/>
+                            </a>                	
+                            <a class="icons twitter" href="https://twitter.com/Tedxespochrbba" target="_blank">
+                                <img src="../images/icon-twitter.png" alt="Twitter" />
+                            </a>
+                        </div>
+                        <div class="navbar-collapse collapse" id="navbar-col">
+                            <ul class="nav navbar-nav visible-xs">
+                                <li><a href="../inscripcion.xhtml">Inscripción</a></li>
+                                <li><a href="https://www.facebook.com/tedxespochriobamba" target="_blank">Facebook</a></li>
+                                <li><a href="https://twitter.com/Tedxespochrbba" target="_blank">Twitter</a></li>
+                            </ul>         
+                        </div>
+                    </div>
+                </div>
+
+            </ui:insert>
+        </div>
+
+        <div id="inscripcion">  
+            <ui:insert name="inscripcion"></ui:insert>  
+        </div>  
+        
+        <div class="container" style="padding-top: 120px;">
+            <ui:insert name="speakers">
+            </ui:insert> 
+            
+            <ui:insert name="content">
+            </ui:insert>
+
+            <ui:insert name="sponsor"> 
+                <div class="bg-sponsor">
+                </div>
+                <div class="container sponsor">
+                    <div class="row"> 
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-4">                       
+                        </div> 
+                        <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 center-block">    
+                            <img class="img-responsive" src="../images/icon-estrella.png" />
+
+                        </div> 
+                    </div>
+                    <div class="row">               
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 center-block" >
+                            <div style="background-color:#000">
+                                <p class="text-justify text-white" >
+                                    Para nuestros ancestros puruhaes y para nosotros el nevado Chimborazo, el “Taita” es considerado como un Dios sagrado
+                                    de gran poder. Como una fuerza inmanente, capaz de ejercer el poder de su liderazgo y vigor sobre las cosas
+                                    y las personas.
+                                </p><br /> <b>
+                                    <p class="text-center text-white"> LUNES 19 DE OCTUBRE DEL 2015</p>
+                                    <p class="text-center text-white">AUDITORIO ROMEO RODRÍGUEZ <font color="#ED3624">|</font> 16:00 
+                                        <font color="#ED3624">|</font> RIOBAMBA</p> </b>
+                            </div>
+                        </div>                
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 hidden-sm hidden-xs rotate4 padding-top-20" style="height: 30px;">
+                            <span style="font-size:40px; z-index: 300;" class="text-gris padding-left-40 "> sponsors </span>
+                        </div>
+                    </div>
+                </div> 
+            </ui:insert>
+
+            <div id="footer" class="padding-container" >
+                <ui:insert name="footer" >
+                    <ui:include src="footer.xhtml" />
+                </ui:insert>
+            </div>
+
+        </div>
+
+        <div class="bg-footer"> 
+        </div>
+
+        <ui:insert name="dialogos" ></ui:insert>
+    </h:body>  
+</html> 

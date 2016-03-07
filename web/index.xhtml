@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TedxRiobamba"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+        <style type="text/css"></style> 
+    </h:head>
+    <h:body>
+        <ui:composition template="plantillas/template.xhtml">
+            <ui:define name="index">
+                <a class="navbar-brand" href="index.xhtml">
+                    <img src="images/logo_TED.png" alt="TEDx Espoch Riobamba" class="img-responsive"/>
+                </a>
+            </ui:define>
+            <ui:define name="inscripcion">
+                <div class="bg-inscripcion">
+                </div>
+                <div class="container padding-container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 padding-top-20">
+                            <a href="paginas/frmSuscribir.xhtml"><img class="img-responsive" style="z-index:400;" src="images/inscribirme.png"/></a>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+            <!--Speakers-->
+            <ui:define name="speakers">
+                <div id="" class="padding-container container" >
+                    <div class="container">                        
+                        <div class="row">          	
+                            <div id="speakers" class="col-lg-7 col-md-7 col-sm-9 col-xs-11 padding-top-50" style="left:-20px;">
+                                <div class="row  rotate-13">
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13"> 
+                                        <a href="" data-toggle="modal" data-target="#ChachoPuebla">
+                                            <img class="img-responsive " src="images/perfiles-01.png" alt="Chacho Puebla"/>
+                                        </a>
+                                    </div>                          
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#FabianBermeo">
+                                            <img class="img-responsive" src="images/perfiles-02.png" alt="Fabian Bermeo"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#JuanaEstrella">
+                                            <img class="img-responsive" src="images/perfiles-03.png" alt="Juana Estrella"/>
+                                        </a>                            
+                                    </div>
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13" >
+                                        <a href="" data-toggle="modal" data-target="#IntiCondo">
+                                            <img class="img-responsive" src="images/perfiles-04.png" alt="Inti Condo"/>
+                                        </a>
+
+                                    </div>                    
+                                </div>            
+                                <div class="row  rotate-13"> 
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#ShirleyMartinez">
+                                            <img class="img-responsive" src="images/perfiles-05.png" alt="Shirley Martinez"/>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-lg-3 col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#RicardoPita">
+                                            <img class="img-responsive" src="images/perfiles-06.png" alt="Ricardo Pita"/>
+                                        </a>
+                                    </div>              
+                                    <div class="col-lg-3 col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#NicolasLoeff">
+                                            <img class="img-responsive" src="images/perfiles-07.png" alt="Nicolas Loeff"/>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#ManuVega">
+                                            <img class="img-responsive" src="images/perfiles-08.png" alt="Manu Vega"/>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="row rotate-13">
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#MarielaCondo">
+                                            <img class="img-responsive" src="images/perfiles-09.png" alt="Mariela Condo"/>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-lg-3  col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#FelipeRivadeneira">
+                                            <img class="img-responsive" src="images/perfiles-10.png" alt="Felipe Rivadeneira"/>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-lg-3 col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#FranciscoMendoza">
+                                            <img class="img-responsive" src="images/perfiles-11.png" alt="Francisco Mendoza"/>
+                                        </a>                            
+                                    </div>  
+                                    <div class="col-lg-3 col-sm-3 col-xs-3 padding-0 item rotate13">
+                                        <a href="" data-toggle="modal" data-target="#CristhianAguirre">
+                                            <img class="img-responsive" src="images/perfiles-12.png" alt="Cristhian Aguirre"/>
+                                        </a>
+
+                                    </div>                
+                                </div>
+                                <div class="row rotate-13 padding-top-20">
+                                    <div class="col-lg-12 col-md-10 hidden-sm hidden-xs" style="height: 100px;">
+                                        <span style="font-size:40px; z-index: 300;" class="text-gris padding-left-40"> speakers </span>
+                                    </div>
+                                </div>
+
+                            </div> 
+
+                            <div class="col-lg-5 col-md-5 col-sm-12 hidden-xs hidden-sm text-white pull-right text-justify skew13" style="padding-right:0px;padding-left:0px">
+                                <h3 class="text-left">¿Qué es TEDx?</h3>
+                                <div style="width:0px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:8px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:16px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:24px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:10px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:37px;height:15px; float:left;clear:left;"></div>
+
+                                <div style="width:0px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:40px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:40px;height:15px; float:left;clear:left;"></div>
+
+                                <div style="width:55px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:68px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:74px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:82px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:86px;height:15px; float:left;clear:left;"></div> 
+
+                                <div style="width:82px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:88px;height:15px; float:left;clear:left;"></div>                 
+                                <div style="width:0px;height:15px; float:left;clear:left;"></div>  
+
+                                <div style="width:106px;height:15px; float:left;clear:left;"></div>                
+                                <div style="width:114px;height:15px; float:left;clear:left;"></div>  
+                                <div style="width:122px;height:15px; float:left;clear:left;"></div>  
+                                <div style="width:126px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:130px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:138px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:146px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:152px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:158px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:164px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:170px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:176px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:180px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:188px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:192px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:198px;height:15px; float:left;clear:left;"></div>                
+                                <div style="width:206px;height:15px; float:left;clear:left;"></div> 
+                                <div style="width:214px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:218px;height:15px; float:left;clear:left;"></div>
+                                <div style="width:225px;height:15px; float:left;clear:left;"></div>
+
+                                TEDx es un programa de eventos locales auto-organizados que unen a la gente  para compartir una experiencia TED. Los videos de TEDTalks y los oradores se conjugan para generar discusiones profundas y conectar e inspirar a la audiencia. <br /><br />
+
+                                TEDxESPOCHRiobamba, es un modelo de inspiración que demuestra que son las ideas la esencia de nuestra visión, la que llega al núcleo de la eternidad con la fuerza inmanente de nuestro interior.<br /><br />
+
+                                TEDxESPOCHRiobamba rescata la mística del gran nevado Chimborazo, que es la inspiración para lograr este proyecto, el poder ancestral de fuerza y vigor son demostrados por personas que optan ser las precursoras de grandes ideas plasmadas en el día a día, demostrando que los grandes ideales tienen un sentimiento de certeza para cambiar los distintos paradigmas de la sociedad, esos pensamientos que nacen de la inventiva, impulsadas por la profundidad de la fuerza personal.
+
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 hidden-xs pull-left">
+                                        <img class="center-block" src="images/icon-espoch.png"/>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 hidden-xs center-block">
+                                        <img clsass="center-block" src="images/icon-fie.png"/>
+                                    </div> 
+                                </div> 
+
+                            </div>
+                            <div class="col-xs-12 visible-sm visible-xs text-white text-justify padding-top-20" >
+                                <h3 class="text-left">¿Qué es TEDx?</h3>
+                                TEDx es un programa de eventos locales auto-organizados que unen a la gente  para compartir una experiencia TED. Los videos de TEDTalks y los oradores se conjugan para generar discusiones profundas y conectar e inspirar a la audiencia. <br />
+
+                                TEDxESPOCHRiobamba, es un modelo de inspiración que demuestra que son las ideas la esencia de nuestra visión, la que llega al núcleo de la eternidad con la fuerza inmanente de nuestro interior.
+
+                                TEDxESPOCHRiobamba rescata la mística del gran nevado Chimborazo, que es la inspiración para lograr este proyecto, el poder ancestral de fuerza y vigor son demostrados por personas que optan ser las precursoras de grandes ideas plasmadas en el día a día, demostrando que los grandes ideales tienen un sentimiento de certeza para cambiar los distintos paradigmas de la sociedad, esos pensamientos que nacen de la inventiva, impulsadas por la profundidad de la fuerza personal.
+                            </div>                      
+                        </div>
+
+                    </div> 
+
+
+                    <!-- Sectores Dialogos Speakers -->
+                    <div class="modal fade" id="ChachoPuebla">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-01.png" alt="Chacho Puebla" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“La alegría del fracaso”)</b>
+                                                De Mendoza - Argentina, Horacio "Chacho" Puebla se unió en el 2005 a Leo Burnett Lisboa y bajo su dirección la oficina alcanzó el top 5 mundial según "Creativity" de Advertising Age. En Septiembre del 2009 fusionó las agencias de Lisboa y Madrid convirtiéndolas en una sola agencia Ibérica. A lo largo de su carrera, Chacho ha ganado cerca de 300 premios internacionales, incluyendo 41 leones en Cannes.
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="FabianBermeo">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-02.png" alt="Fabian Bermeo" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“Los juegos que jugamos”)</b>
+                                                Es CEO, fundador y accionista de INTEGRAR, Respuestas Creativas. Empresa dedicada al desarrollo del talento humano, aprendizaje y emprendimiento a través de la innovación. En 2014 fue director del proyecto “Impúlsate” para la generación de cultura de emprendimiento dinámico en la ciudad de Cuenca, con el apoyo del Municipio de la ciudad.
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="JuanaEstrella">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-03.png" alt="Juana Estrella" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b> (“La creatividad para ser feliz”)</b>
+                                                Hace 30 años que Juana es actriz, el teatro ha sido su nave nodriza, desde la cual ha incursionado en el cine, la televisión y la web, pero por efectos del Photoshop decidió quedarse en las tablas en donde la piel y las emociones se muestran tal cual son. Se formó cuando estudiaba la carrera de letras en la Universidad de Cuenca, sus maestros de teatro ahora son sus colegas y los escenarios en donde comenzó a actuar ahora son su segundo hogar.
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="IntiCondo">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-04.png" alt="Juana Estrella" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“La tecnología con corazón puruhá”)</b>
+                                                Runa Puruhá, desarrollador de Tecnología e investigador del departamento de Interactividad y Multimedia en la Universidad San Francisco de Quito. Aplica investigación tecnológica desde inicios de su carrera, creador de diferentes tecnologías para Ecuador, aviones no tripulados, sillas tecnológicas, prótesis robóticas, automatización robótica, dispositivos de defensa militar.
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="ShirleyMartinez">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-05.png" alt="Juana Estrella" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“El hambre es personal”)</b>
+                                                Shirley Monserrath Martínez Cabezas, nació en 1993 en Riobamba. Gusta de leer artículos científicos, programar y sobre todo buscar soluciones para problemas de nuestra sociedad. Cree que ser parte de una solución es un gran paso para el cambio. La curiosidad es una de sus características, considera que una persona curiosa nunca deja de aprender.
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="RicardoPita">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-06.png" alt="Ricardo Pita" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“Así suena nuestra cosmovisión”)</b>
+                                                Músico compositor latinoamericano. Estudió música en Buenos Aires, Argentina y ha colaborado en la escena musical del Ecuador como músico de estudio y de conciertos con varias bandas como la del legendario Héctor Napolitano. Su repertorio de solista pasa por géneros como el folcklore latinoamericano, el blues, swing, jazz, polka y música gitana.
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="NicolasLoeff">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-07.png" alt="Nicolas Loeff" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“Las computadoras aprendieron aprendieron a tomar decisiones por ti (por suerte”)</b>
+                                                PhD en ingeniería, investigador, ex-docente universitario, emprendedor: Nicolás, uruguayo, tiene más de 15 años de experiencia aplicando inteligencia artificial para crear algoritmos predictivos aplicados a diversos problemas, desde bioingeniería hasta mercados financieros. Se doctoró en EEUU con una beca Fulbright y ha trabajado en laboratorios de investigación en Norteamérica, Europa y Latinoamérica.
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="ManuVega">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-08.png" alt="Manu Vega" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“Nuevas formas de trabajar: Coworking”)</b>
+                                                Manuel Vega constituyó su primera empresa a los 17 años. Desde entonces, ha explorado la relación entre la tecnología, el emprendimiento y los negocios desde tantos ángulos le ha sido posible. Esas exploraciones quedan evidenciadas en las dos entidades que lidera hoy en día: Lynx Trade, una empresa de desarrollo de software bursátil; y Coworking Cuenca, el primer ecosistema de startups en la ciudad. 
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="MarielaCondo">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-09.png" alt="Mariela Condo" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“La fuerza de las ideas”)</b>
+                                                Cantautora ecuatoriana, nacida en la comunidad indígena de Cacha de la provincia de Chimborazo. Su camino musical inicia a temprana edad de la mano de su tío político Luis Alfonso Bravo (compositor riobambeño) quien crea varias canciones para Mariela. Dos de estas canciones se estrenan en una Cantata basada en un cuento infantil escrito por Luis Alfonso Bravo.
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="FelipeRivadeneira"> 
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-10.png" alt="Felipe Rivadeneira" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“La realidad de los sueños”)</b>
+                                                Un profesional joven y orgullosamente ecuatoriano, con una carrera impecable y aplaudida por más de 12.000 asistentes quienes han compartido con él sus conocimientos  y sus vivencias dentro y fuera de país convirtiéndose en un Embajador Internacional de nuestra Gastronomía. 
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="FranciscoMendoza">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-11.png" alt="Francisco Mendoza" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“Los negocios de una idea”)</b>
+                                                Francisco Mendoza Izurieta nació en la ciudad de Riobamba, en el año 1982. Curso su estudio primarios y secundarios en Riobamba y Quito. Estudio y se graduó en la Universidad Católica de Ecuador como Abogado. Actualmente ejerce su profesión en el libre ejercicio y se ha especializado en el sector hidrocarburifero.
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="CristhianAguirre">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"><b>x</b></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-5  col-sm-5 col-xs-5">
+                                            <img src="images/perfiles-12.png" alt="Cristhian Aguirre" class="img-responsive"/>      
+                                        </div>
+                                        <div class="col-lg-6  col-sm-6 col-xs-6 text-justify">
+                                            <div class="sp-dsc">
+                                                <b>(“La sabiduría de los apus”)</b>
+                                                Riobambeño, Ingeniero en Ecoturismo y Máster en Arqueología del Neotrópico es actualmente Vicedecano de la Facultad de Recurso Naturales y catedrático de Patrimonio Cultural, Arqueología e Historia en la Facultad de Recursos Naturales de la Escuela Superior Politécnica de Chimborazo. Es el descubridor del yacimiento arqueológico de la Pirámide Escalonada del Puñay.
+
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin Dialogos Speakers -->
+
+                </div>
+
+                <div class="bg-slider">
+                </div>
+                <div class="bg-speakers">
+                </div>
+                <!---->                
+            </ui:define>
+            <!--Sponsor-->
+            <ui:define name="content">                
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="TEDxEspoch2015"/>
+        <title>TEDxEspochRiobamba</title>    
+        <link rel="stylesheet" href="../css/style.css"/>         
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="../images/favicon.ico"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="../plantillas/template_admin.xhtml">
+
+            <ui:define name="content">
+                <div id="" class="padding-container container">
+                    <!--Inicio Formulario-->
+                    <h:form id="frmPerfil">
+                        <p:growl id="mensajeGeneral" showDetail="true" sticky="false" life="5000" />
+                        <p:panel id="pnlRegistradosDatos">
+                            <center>
+                                <h:outputText value="MIS DATOS" class="h4"/></center>
+                            <br/>     
+                            <div class="form-group">
+                                <h:outputLabel value="Nombre:" for="txtNombre" styleClass="col-md-3"/>
+                                <p:inputText id="txtNombre" value="#{personaPeriodoControlador.objUsuario.nombre}" title="Nombre" required="true" requiredMessage="El nombre es requerido" />
+                                <p:watermark for="txtNombre" value="Nombre"/>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="Apellido:" for="txtApellido" styleClass="col-md-3"/>
+                                <p:inputText id="txtApellido" value="#{personaPeriodoControlador.objUsuario.apellido}" title="Apellido" required="true" requiredMessage="El apellido es requerido" />
+                                <p:watermark for="txtApellido" value="Apellido"/>
+                            </div>
+                            <div class="form-group">
+                                <h:outputLabel value="E-mail:" for="txtE-mail" styleClass="col-md-3"/>
+                                <p:inputText id="txtE-mail" value="#{personaPeriodoControlador.objUsuario.email}" title="E-mail" required="true" requiredMessage="El email es requerido" />
+                                <p:watermark for="txtE-mail" value="email@dominio.com"/>
+                            </div>                            
+                            <div class="form-group">
+                                <h:outputLabel value="Ciudad/Institución:" for="txtciudad" styleClass="col-md-3"/>
+                                <p:inputText id="txtciudad" value="#{personaPeriodoControlador.objUsuario.ciudad}" title="Ciudad" required="true" requiredMessage="La ciudad es requerido" />
+                                <p:watermark for="txtciudad" value="Ciudad"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="modal-footer">
+                                    <center>
+                                        <p:commandLink  process="@form" ajax="false" value="Aceptar" styleClass="btn btn-success" title="Aceptar"
+                                                        actionListener="#{usuarioControlador.updateUsuario()}" >                                                        
+                                        </p:commandLink>
+                                    </center>
+                                </div>
+                            </div>
+                        </p:panel>
+                    </h:form>                 
+                    <!--Fin Formulario  -->
+                </div>             
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

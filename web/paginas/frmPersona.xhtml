@@ -1,0 +1,51 @@
+    <?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:outputText value="POR FAVOR COMPLETA EL SIGUIENTE FORMULARIO"  style="font-size: xx-large "></h:outputText>
+        <hr/>
+        <h:form id="frmRegistrarUsuario">
+            <p:growl id="mensajeGeneral" showDetail="true" sticky="false" />
+            <h:panelGrid columns="1">
+                
+                <p:outputLabel value="Cédula" />
+                <p:inputMask mask="9999999999" value="#{personaControlador.objPersona.cedula}" required="true" requiredMessage="Ingrese la cédula"/>                
+                
+                <p:outputLabel value="Nombre" for="txtNombre"/>
+                <p:inputText id="txtNombre" label="Nombre" size="50" value="#{personaControlador.objPersona.nombre}" style="text-transform: uppercase" required="true" requiredMessage="Ingrese el nombre">
+
+                </p:inputText>
+                <p:message for="txtNombre"/>
+
+                <p:outputLabel value="Apellido" for="txtApellido"/>
+                <p:inputText id="txtApellido" label="Apellido" size="50" value="#{personaControlador.objPersona.apellido}" style="text-transform: uppercase" required="true" requiredMessage="Ingrese el apellido">
+
+                </p:inputText>
+                
+                <p:outputLabel value="Titulo" for="txtTitulo"/>
+                <p:inputText id="txtTitulo" label="Titulo" size="50" value="#{personaControlador.objPersona.titulo}" style="text-transform: uppercase" required="true" requiredMessage="Ingrese el titulo">
+                </p:inputText>
+                <p:message for="txtTitulo"/>
+                
+                <p:outputLabel value="Sexo:" />
+                <p:selectOneMenu id="Sexo"  value="#{personaControlador.idSexo}" required="true" requiredMessage="Escoja un sexo">
+                    <f:selectItems value="#{personaControlador.lstSexo}"  var="sexo" itemLabel="#{sexo.tsexoDescripcion}" itemValue="#{sexo.tsexoId}"/>
+                </p:selectOneMenu>                   
+                
+                <p:outputLabel value="¿Cúal es la razon de inscribirse en el evento?" />
+                
+                <p:inputTextarea value="#{personaControlador.objComentario.descripcioncomentario}" style="text-transform: uppercase" rows="5" cols="30" counter="display" maxlength="100" counterTemplate="{0} caracteres mínimos." autoResize="false" required="true" requiredMessage="Debe escribir la razon por la que se esta inscribiendo en este evento"/>
+                <h:outputText id="display" />
+                
+                <p:commandButton value="Crear Cuenta" ajax="false" actionListener="#{personaControlador.insertarPersona()}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
