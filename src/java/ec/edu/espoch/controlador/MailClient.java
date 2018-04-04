@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,7 +37,6 @@ public class MailClient {
             //Preparamos el Mensaje
             MimeMessage message = new MimeMessage(mailSession);
             message.setFrom(new InternetAddress(mailSession.getProperty("mail.from"), "TEDx ESPOCH Riobamba"));
-
             message.setRecipients(Message.RecipientType.CC, InternetAddress.parse("reivaj_oremor@hotmail.com, wilson@escobarycastro.com"));
             //message.setSender(new InternetAddress(mailSession.getProperty("mail.email")));
             message.setSubject(subject);
@@ -48,7 +48,6 @@ public class MailClient {
             } else {
                 message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
             }
-
             //envío del mensaje
             Transport.send(message);
             envio = true;

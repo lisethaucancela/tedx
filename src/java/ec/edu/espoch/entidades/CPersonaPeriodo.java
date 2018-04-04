@@ -10,23 +10,23 @@ package ec.edu.espoch.entidades;
  * @author William
  */
 public class CPersonaPeriodo {
-    private int tpersonaperiodoid; 
-   private int tpersonaid; 
-   private int tperiodoid; 
-   private String tpersonaperiodocomentario;
-  private String tpersonaperiodofechainscripcion; 
-  private String tpersonaperiodopensamiento; 
-  private int tpersonaperiodoestado;
-private boolean blnElegido;
+
+    private int tpersonaperiodoid;
+    private int tpersonaid;
+    private int tperiodoid;
+    private String tpersonaperiodocomentario;
+    private String tpersonaperiodofechainscripcion;
+    private String tpersonaperiodopensamiento;
+    private int tpersonaperiodoestado;
+    private boolean blnElegido;
     private CUsuario objPersona;
-   
 
     public CPersonaPeriodo() {
     }
 
     public CPersonaPeriodo(int tpersonaid) {
         this.tpersonaid = tpersonaid;
-        
+
     }
 
     public CPersonaPeriodo(int tpersonaperiodoid, int tpersonaid, int tperiodoid, String tpersonaperiodocomentario, String tpersonaperiodofechainscripcion, String tpersonaperiodopensamiento, int tpersonaperiodoestado) {
@@ -39,7 +39,7 @@ private boolean blnElegido;
         this.tpersonaperiodoestado = tpersonaperiodoestado;
     }
 
-     public CPersonaPeriodo(int id,CUsuario objPerson, String tpersonaperiodocomentario, String tpersonaperiodofechainscripcion, String tpersonaperiodopensamiento) {
+    public CPersonaPeriodo(int id, CUsuario objPerson, String tpersonaperiodocomentario, String tpersonaperiodofechainscripcion, String tpersonaperiodopensamiento) {
         this.tpersonaperiodoid = id;
         this.objPersona = objPerson;
         this.tpersonaperiodocomentario = tpersonaperiodocomentario;
@@ -47,6 +47,7 @@ private boolean blnElegido;
         this.tpersonaperiodopensamiento = tpersonaperiodopensamiento;
         this.blnElegido = false;
     }
+
     public String getTpersonaperiodopensamiento() {
         return tpersonaperiodopensamiento;
     }
@@ -70,11 +71,6 @@ private boolean blnElegido;
     public void setObjPersona(CUsuario objPersona) {
         this.objPersona = objPersona;
     }
-
-    
-    
-    
-    
 
     public int getTpersonaperiodoid() {
         return tpersonaperiodoid;
@@ -123,6 +119,5 @@ private boolean blnElegido;
     public void setTpersonaperiodoestado(int tpersonaperiodoestado) {
         this.tpersonaperiodoestado = tpersonaperiodoestado;
     }
-  
-    
+
 }
